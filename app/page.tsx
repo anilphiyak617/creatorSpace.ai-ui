@@ -1,7 +1,12 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
-
-import { LP_GRID_ITEMS } from "lp-items"
+import Image from "next/image"
+import { Button } from "@/components/atoms/button"
+import { Container } from "@/components/atoms/container"
+import { CallToActionSection } from "@/components/sections/CallToAction"
+import { FeatureHighlightsSection } from "@/components/sections/FeatureHighlights"
+import { Footer } from "@/components/sections/Footer"
+import { SocialProofSection } from "@/components/sections/SocialProof"
+import { ValuePropositionsSection } from "@/components/sections/ValuePropositions"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -20,47 +25,51 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Web() {
+export default function LandingPage() {
   return (
     <>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto grid max-w-(--breakpoint-xl) px-4 py-8 text-center lg:py-16">
-          <div className="mx-auto place-self-center">
-            <h1 className="mb-4 max-w-2xl text-4xl leading-none font-extrabold tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-              Next.js Enterprise Boilerplate
-            </h1>
-            <p className="mb-6 max-w-2xl font-light text-gray-500 md:text-lg lg:mb-8 lg:text-xl dark:text-gray-400">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
-            </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
-              Get started
-            </Button>
-            <Button
-              href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
-              intent="secondary"
-            >
-              Deploy Now
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-(--breakpoint-xl) px-4 py-8 sm:py-16 lg:px-6">
-          <div className="justify-center space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
-            {LP_GRID_ITEMS.map((singleItem) => (
-              <div key={singleItem.title} className="flex flex-col items-center justify-center text-center">
-                <div className="bg-primary-100 dark:bg-primary-900 mb-4 flex size-10 items-center justify-center rounded-full p-1.5 text-blue-700 lg:size-12">
-                  {singleItem.icon}
-                </div>
-                <h3 className="mb-2 text-xl font-bold dark:text-white">{singleItem.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400">{singleItem.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <main>
+        <HeroSection />
+        <ValuePropositionsSection />
+        <FeatureHighlightsSection />
+        <SocialProofSection />
+        <CallToActionSection />
+      </main>
+      <Footer />
     </>
   )
+}
+
+function HeroSection() {
+  return (
+    <section className="py-24 bg-gradient-to-b from-background to-muted">
+      <Container className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
+            Unlock Your Creator Potential
+          </h1>
+          <p className="text-xl text-muted-foreground">
+            Connect with brands, monetize your content, and grow your influence - all in one powerful platform.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" className="text-base">
+              Get Started - It's Free
+            </Button>
+            <Button size="lg" variant="outline" className="text-base">
+              Learn More
+            </Button>
+          </div>
+        </div>
+        <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden">
+          <Image 
+            src="/placeholder-hero.jpg" 
+            alt="Content creators working together" 
+            fill 
+            className="object-cover"
+            priority
+          />
+        </div>
+      </Container>
+    </section>
+  );
 }

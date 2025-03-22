@@ -46,6 +46,10 @@ const config = typescriptEslint.config(
       "import/resolver": {
         typescript: true,
         node: true,
+        alias: {
+          map: [["@", "."]],
+          extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
+        }
       },
     },
     rules: {

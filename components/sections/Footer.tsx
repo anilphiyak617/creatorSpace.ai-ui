@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Separator } from "@/components/atoms/separator";
 import { Container } from "@/components/atoms/container";
+import { Separator } from "@/components/atoms/separator";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/atoms/tabs";
 import { Container } from "@/components/atoms/container";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/atoms/tabs";
 
 export function FeatureHighlightsSection() {
   const features = [
@@ -8,25 +8,25 @@ export function FeatureHighlightsSection() {
       id: "discovery",
       title: "AI-Powered Creator Discovery",
       description: "Businesses use our intelligent search to find creators based on niche, audience, demographics, and content style, ensuring you get discovered by the right brands.",
-      image: "/placeholder-feature-1.jpg",
+      image: "/landing-page/ai-powered-creator-discovery.jpeg",
     },
     {
       id: "collaboration",
       title: "Seamless Collaboration Management",
       description: "Manage all your collaborations in one central dashboard, from proposal submissions to content approvals and feedback.",
-      image: "/placeholder-feature-2.jpg",
+      image: "/landing-page/seemless-collaboration.jpeg",
     },
     {
       id: "messaging",
       title: "Integrated Messaging & Communication",
       description: "Communicate directly with brands within the platform, keeping all your important conversations organized and accessible.",
-      image: "/placeholder-feature-3.jpg",
+      image: "/landing-page/integrated-message-communication.jpeg",
     },
     {
       id: "payments",
       title: "Secure Payment Processing",
       description: "Get paid securely and on time through our integrated payment system, eliminating payment hassles.",
-      image: "/placeholder-feature-4.jpg",
+      image: "/landing-page/payment-secure.jpeg",
     },
   ];
 
@@ -42,7 +42,7 @@ export function FeatureHighlightsSection() {
           </p>
         </div>
         
-        <Tabs defaultValue={features[0].id} className="w-full">
+        <Tabs defaultValue={features[0]?.id} className="w-full">
           <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
             {features.map((feature) => (
               <TabsTrigger key={feature.id} value={feature.id}>

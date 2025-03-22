@@ -62,7 +62,7 @@ function HeroSection() {
         </div>
         <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden">
           <Image 
-            src="/placeholder-hero.jpg" 
+            src="/landing-page/hero-section.jpeg" 
             alt="Content creators working together" 
             fill 
             className="object-cover"

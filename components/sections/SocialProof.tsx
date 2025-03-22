@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/atoms/avatar";
+import { Badge } from "@/components/atoms/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/atoms/card";
 import { Container } from "@/components/atoms/container";
-import { Badge } from "@/components/atoms/badge";
 
 export function SocialProofSection() {
   const testimonials = [

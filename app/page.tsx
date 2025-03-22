@@ -42,16 +42,14 @@ export default function LandingPage() {
 
 function HeroSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-muted">
-      <Container className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="from-background to-muted bg-gradient-to-b py-24">
+      <Container className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-            Unlock Your Creator Potential
-          </h1>
-          <p className="text-xl text-muted-foreground">
+          <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl">Unlock Your Creator Potential</h1>
+          <p className="text-muted-foreground text-xl">
             Connect with brands, monetize your content, and grow your influence - all in one powerful platform.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Button size="lg" className="text-base">
               Get Started - It's Free
             </Button>
@@ -60,16 +58,16 @@ function HeroSection() {
             </Button>
           </div>
         </div>
-        <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden">
-          <Image 
-            src="/landing-page/hero-section.jpeg" 
-            alt="Content creators working together" 
-            fill 
+        <div className="relative h-[400px] overflow-hidden rounded-xl md:h-[500px]">
+          <Image
+            src="/landing-page/hero-section.jpeg"
+            alt="Content creators working together"
+            fill
             className="object-cover"
             priority
           />
         </div>
       </Container>
     </section>
-  );
+  )
 }

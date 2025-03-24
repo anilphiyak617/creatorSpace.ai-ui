@@ -5,6 +5,7 @@ import { Container } from "@/components/atoms/container"
 import { CallToActionSection } from "@/components/sections/CallToAction"
 import { FeatureHighlightsSection } from "@/components/sections/FeatureHighlights"
 import { Footer } from "@/components/sections/Footer"
+import { Header } from "@/components/sections/Header"
 import { SocialProofSection } from "@/components/sections/SocialProof"
 import { ValuePropositionsSection } from "@/components/sections/ValuePropositions"
 
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 export default function LandingPage() {
   return (
     <>
+      <Header />
       <main>
         <HeroSection />
         <ValuePropositionsSection />

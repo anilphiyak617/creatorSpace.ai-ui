@@ -1,30 +1,19 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import { Button } from "@/components/atoms/button"
-import { Container } from "@/components/atoms/container"
-import { CallToActionSection } from "@/components/sections/CallToAction"
-import { FeatureHighlightsSection } from "@/components/sections/FeatureHighlights"
-import { Footer } from "@/components/sections/Footer"
-import { Header } from "@/components/sections/Header"
-import { SocialProofSection } from "@/components/sections/SocialProof"
-import { ValuePropositionsSection } from "@/components/sections/ValuePropositions"
+import { Metadata } from "next";
+import Image from "next/image";
+import { Button } from "@/components/atoms/button";
+import { Container } from "@/components/atoms/container";
+import { CallToActionSection } from "@/components/sections/CallToAction";
+import { FeatureHighlightsSection } from "@/components/sections/FeatureHighlights";
+import { Footer } from "@/components/sections/Footer";
+import { Header } from "@/components/sections/Header";
+import { SocialProofSection } from "@/components/sections/SocialProof";
+import { ValuePropositionsSection } from "@/components/sections/ValuePropositions";
+import WaitlistForm from "@/components/Waitlist/WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Next.js Enterprise Boilerplate",
-  twitter: {
-    card: "summary_large_image",
-  },
-  openGraph: {
-    url: "https://next-enterprise.vercel.app/",
-    images: [
-      {
-        width: 1200,
-        height: 630,
-        url: "https://raw.githubusercontent.com/Blazity/next-enterprise/main/.github/assets/project-logo.png",
-      },
-    ],
-  },
-}
+  title: "CreatorSpace - Empowering Creators",
+  description: "Discover CreatorSpace, the ultimate platform for content creators to thrive and monetize their passion.",
+};
 
 export default function LandingPage() {
   return (
@@ -36,10 +25,11 @@ export default function LandingPage() {
         <FeatureHighlightsSection />
         <SocialProofSection />
         <CallToActionSection />
+        <WaitlistSection />
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
 function HeroSection() {
@@ -72,4 +62,16 @@ function HeroSection() {
       </Container>
     </section>
   )
+}
+
+function WaitlistSection() {
+  return (
+    <section className="bg-background py-16">
+      <Container>
+        <div className="max-w-md mx-auto">
+          <WaitlistForm />
+        </div>
+      </Container>
+    </section>
+  );
 }

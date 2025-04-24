@@ -1,9 +1,22 @@
-import "styles/tailwind.css"
+import { Inter } from "next/font/google";
+import "@/styles/tailwind.css";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const inter = Inter({ subsets: ["latin"] });
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  // Initialize dark mode
+  
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>
+        <div className="flex min-h-screen flex-col">
+          <main className="flex-1">{children}</main>
+        </div>
+      </body>
     </html>
-  )
+  );
 }

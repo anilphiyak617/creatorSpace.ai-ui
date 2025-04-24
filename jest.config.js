@@ -1,17 +1,14 @@
-const nextJest = require("next/jest")
-
-const createJestConfig = nextJest({
-  dir: "./",
-})
-
-const customJestConfig = {
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  testEnvironment: "jest-environment-jsdom",
-  modulePathIgnorePatterns: ["<rootDir>/dist/"],
-  testPathIgnorePatterns: ["<rootDir>/e2e"],
+module.exports = {
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1', // Resolves @/ to src/ in Jest
+    '^@/components/(.*)$': '<rootDir>/components/$1',
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
   },
-}
-
-module.exports = createJestConfig(customJestConfig)
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+  },
+  // Add the following line to include the new test directory
+  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js', '<rootDir>/tests/**/*.test.ts'],
+};

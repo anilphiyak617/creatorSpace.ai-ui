@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { LoadingSpinner } from '@/components/atoms/LoadingSpinner';
-import { ProfileSetupForm } from '@/components/forms/ProfileSetupForm';
+import { ProfileSetupForm } from '@/components/atoms/ProfileSetupForm';
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle';
 import { ProgressIndicator } from '@/components/ui/ProgressIndicator';
 
